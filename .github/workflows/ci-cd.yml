@@ -18,7 +18,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-
+      - name: Make mvnw executable
+        run: chmod +x mvnw
       - name: Build and Test
         run: ./mvnw clean package
 
@@ -35,7 +36,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-
+      - name: Make mvnw executable
+        run: chmod +x mvnw
       - name: Build JAR
         run: ./mvnw clean package
 
