@@ -10,4 +10,9 @@ public class LogisticsController {
     public String home() {
         return "🚚 Logistics Service Running Successfully";
     }
+
+    @GetMapping("/health")
+    public String health() {
+        return "OK";
+    }
 }

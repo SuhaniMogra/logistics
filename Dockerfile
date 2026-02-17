@@ -1,9 +1,9 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM tomcat:10-jdk17
 
-WORKDIR /app
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-COPY target/logistics-0.0.1-SNAPSHOT.jar app.jar
+COPY target/logistics-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","app.jar"]
+CMD ["catalina.sh", "run"]
